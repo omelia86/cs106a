@@ -11,9 +11,47 @@
 import stanford.karel.*;
 
 public class CollectNewspaperKarel extends Karel {
-	
-	// You fill in this part
-	public void run() {
-		move();
+	private void turnRight() {
+		for (int i = 0; i < 3; i++) {
+			turnLeft();
+		}
 	}
+	
+	private void moveToTheNewspaper() {
+		move();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		
+	}
+	
+	public void run() {
+		moveToTheNewspaper();
+		pickBeeper();
+		returnToStartingPoint(); 
+		
+	} 
+	
+	private void returnToStartingPoint() {
+		turnAround();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		move();
+		turnAround(); 
+		
+	}
+	
+   private void turnAround() {
+	    turnLeft();
+	    turnLeft();
+   }
+   
+   
+	
 }
+
