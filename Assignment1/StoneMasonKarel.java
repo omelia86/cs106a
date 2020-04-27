@@ -24,25 +24,7 @@ public class StoneMasonKarel extends SuperKarel {
 		turnAround();
 		goToWall();
 		turnLeft();
-//		fixAColumn();
-	//	turnAround();
-	//	goToWall();
-//		turnLeft();
-		//moveToNextColumn();
-		
-		//fixAColumn();
-	// */
-		
-	//	if (noBeepersPresent()) {
-		// 	putBeeper(); 	
-	//	} 
-	//	move();
-			
-		
-		
-	//	walkToNextColumn();
 	}
-	 
 	
 	private void goToWall() { 
 		while (frontIsClear()) {
@@ -62,22 +44,10 @@ public class StoneMasonKarel extends SuperKarel {
 		}																				
 		turnLeft();
 		while (frontIsClear()) {
-			move();
-			
-		
+			move();		
 			if (noBeepersPresent()) {
 				putBeeper();
 			}
 		}
-	}
-	
-	public void walkToNextColumn () {
-		move();
-		for (int i = 0; i < 4; i++) {
-			
-		}
-		
-		
-		
-	}
+	}	
 }
