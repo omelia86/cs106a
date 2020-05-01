@@ -10,10 +10,35 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-
-	public void Run() {
+	public void run() 
+	{   
+		putABeeperRow();
+		repositiontToWest();
+		
+	  
+	  
 		
 	}
-	// You fill in this part
-
+	private void putABeeperRow() {
+		putBeeper();
+		while(frontIsClear()) {
+			moveSafely();
+			if(frontIsClear()) {
+				moveSafely(); 
+				putBeeper(); 				
+			}
+		}
+	}
+	private void moveSafely() {
+		if (frontIsClear()) {
+			move();
+		}
+	}
+	private void repositiontToWest() {
+		turnLeft();
+		moveSafely();
+		turnLeft();
+		
+	}
 }
+
